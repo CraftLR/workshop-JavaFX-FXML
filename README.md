@@ -24,7 +24,7 @@ La première chose que vous allez faire est de créer un fork d'un dépôt. Pour
 
 <https://classroom.github.com/a/r2VgR3ds>
 
-Comme pour les autres TP, GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-R202/tp3' et s'appellant 'IUTInfoAix-R202-2022/tp3-votreUsername'.Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser votre travail.
+Comme pour les autres TP, GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-R202/tp3' et s'appelant 'IUTInfoAix-R202-2022/tp3-votreUsername'.Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser votre travail.
 
 Une fois votre fork créé, il vous suffit de l'importer dans IntelliJ.
 
@@ -32,8 +32,7 @@ Une fois votre fork créé, il vous suffit de l'importer dans IntelliJ.
 
 Avec JavaFX, les interfaces peuvent être créées de deux manières :
 
-- Procédurale : en écrivant du code Java qui fait appel aux API de la plateforme et qui utilise les composants/conteneurs à
-disposition (classes et interfaces)
+- Procédurale : en écrivant du code Java qui fait appel aux API de la plateforme et qui utilise les composants/conteneurs à disposition (classes et interfaces)
 
 - Déclarative : en décrivant l'interface dans un fichier au format FXML qui sera ensuite chargé dynamiquement dans l'application
 
@@ -41,10 +40,9 @@ Au centre de l'approche déclarative, se trouvent les fichiers FXML. Un fichier 
 
 Le fichier FXML décrit le "quoi" mais pas le "comment"
 
-A l'exécution, le fichier FXML sera chargé par l'application (classe `FXMLLoader`) et un objet Java sera créé (généralement la racine est un conteneur) avec les éléments que le fichier décrit (les composants, conteneurs, graphiques, …).
+À l'exécution, le fichier FXML sera chargé par l'application (classe `FXMLLoader`) et un objet Java sera créé (généralement la racine est un conteneur) avec les éléments que le fichier décrit (les composants, conteneurs, graphiques, …).
 
-Il est possible de créer les fichiers FXML avec un éditeur de texte mais, plus généralement, on utilise un outil graphique (*SceneBuilder*)
-qui permet de concevoir l'interface de manière conviviale et de générer automatiquement le fichier FXML correspondant.
+Il est possible de créer les fichiers FXML avec un éditeur de texte mais, plus généralement, on utilise un outil graphique (*SceneBuilder*) qui permet de concevoir l'interface de manière conviviale et de générer automatiquement le fichier FXML correspondant.
 
 Les objets créés par le chargement de fichiers FXML peuvent être assignés à la racine d'un graphe de scène ou représenter un des nœuds dans un graphe de scène créé de manière procédurale. Une fois chargés, les nœuds issus de fichiers FXML sont totalement équivalents à ceux créés de manière procédurale. Les mêmes opérations et manipulations peuvent leur être appliquées.
 
@@ -58,7 +56,7 @@ Par exemple, l'élément :
 <BorderPane prefHeight="80.0" prefWidth="250.0" ...>
 ```
 
-sera interprété comme :
+Sera interprété comme :
 
 ```java
 BorderPane rootPane = new BorderPane();
@@ -72,7 +70,7 @@ Quand un attribut commence par le nom d'une classe suivi d'un point et d'un iden
 <TextField GridPane.columnIndex="3" . . . >
 ```
 
-l'attribut sera interprété comme une invocation de méthode statique :
+L'attribut sera interprété comme une invocation de méthode statique :
 
 ```java
 TextField tfd = new TextField();
@@ -181,13 +179,13 @@ public void start(Stage primaryStage) throws Exception {
 
 ### Exercice 2 : Création d'un composant personnalisé en FXML
 
-Dans cet exercice, nous allons voir comment créer des composants personnalisés avec du FXML. La création de nouveau composant peut être nécessaire pour modulariser une IHM. En plus de mieux découper le code en ensembles cohérents et maîtrisables, chaque composant pourra être ainsi réutilisé par la suite dans un autre contexte.
+Dans cet exercice, nous allons voir comment créer des composants personnalisés avec du FXML. La création de nouveaux composants peut être nécessaire pour rendre modulaire une IHM. En plus de mieux découper le code en ensembles cohérents et maîtrisables, chaque composant pourra être ainsi réutilisé par la suite dans un autre contexte.
 
-Le composant que nous allons créer sera un classique écran de login. La principale différence entre un composant personnalisé et une IHM quelconque en FXML se situe au niveau de nœud principal. Le parent utilisera un nœud `<fx:root>` dans ce nœud, il devra indiquer le type de cette racine et ne surtout pas préciser le controleur.
+Le composant que nous allons créer sera un classique écran de login. La principale différence entre un composant personnalisé et une IHM quelconque en FXML se situe au niveau de nœud principal. Le parent utilisera un nœud `<fx:root>` dans ce nœud, il devra indiquer le type de cette racine et ne surtout pas préciser le controller.
 
-Dans le code du composant, notre composant devra étendre le type indiqué dans le nœud `<fx:root>`. Le chargement du FXML interviendra directement dans le constructeur par défaut. Il faudra préciser à ce moment là que l'objet courant sera à la fois la racine (`setRoot()`) et le contrôleur (`setController()`) de la vue FXML.
+Dans le code du composant, notre composant devra étendre le type indiqué dans le nœud `<fx:root>`. Le chargement du FXML interviendra directement dans le constructeur par défaut. Il faudra préciser à ce moment-là que l'objet courant sera à la fois la racine (`setRoot()`) et le contrôleur (`setController()`) de la vue FXML.
 
-Les propriétés exposées par le composant devront posséder des accesseurs publiques.
+Les propriétés exposées par le composant devront posséder des accesseurs publics.
 
 #### Travail à réaliser
 
@@ -199,7 +197,7 @@ Les propriétés exposées par le composant devront posséder des accesseurs pub
 
 ### Exercice 3 : Reversi
 
-L'objet de cet exercice est l'écriture en Java de l'IHM d'une version simplifiée du jeu Othello. C' est un jeu de société combinatoire abstrait, qui oppose deux joueurs.
+L'objet de cet exercice est l'écriture en Java de l'IHM d'une version simplifiée du jeu Othello. C'est un jeu de société combinatoire abstrait qui oppose deux joueurs.
 
 Il se joue sur un tablier unicolore de 64 cases (8x8) appelé *othellier*. Les colonnes sont numérotées de gauche à droite par les lettres **a** à **h** ; les lignes sont numérotées de haut en bas par les chiffres **1** à **8**.
 
@@ -209,18 +207,17 @@ Les joueurs disposent de 64 pions bicolores, noirs d'un côté et blancs de l'au
 [B]: src/main/resources/assets/blanc.png
 [N]: src/main/resources/assets/noir.png
 [G]: src/main/resources/assets/noir_transparent.png
-[H]: src/main/resources/assets/blanc_transparent.png
 
-|     | a    | b    | c    | d    | e    | f    | g    | h    |
-| --- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-|**1**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**2**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**3**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**4**|![][V]|![][V]|![][V]|![][B]|![][N]|![][V]|![][V]|![][V]|
-|**5**|![][V]|![][V]|![][V]|![][N]|![][B]|![][V]|![][V]|![][V]|
-|**6**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**7**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**8**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
+|       | a      | b      | c      | d      | e      | f      | g      | h      |
+|-------|--------|--------|--------|--------|--------|--------|--------|--------|
+| **1** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **2** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **3** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **4** | ![][V] | ![][V] | ![][V] | ![][B] | ![][N] | ![][V] | ![][V] | ![][V] |
+| **5** | ![][V] | ![][V] | ![][V] | ![][N] | ![][B] | ![][V] | ![][V] | ![][V] |
+| **6** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **7** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **8** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
 
 Chaque joueur, noir et blanc, pose l'un après l'autre un pion de sa couleur sur l'othellier selon les règles définies ci-après. Le jeu s'arrête quand les deux joueurs ne peuvent plus poser de pion. On compte alors le nombre de pions. Le joueur ayant le plus grand nombre de pions de sa couleur sur l'othellier a gagné.
 
@@ -228,33 +225,33 @@ Chaque joueur, noir et blanc, pose l'un après l'autre un pion de sa couleur sur
 
 Noir commence toujours la partie. Puis les joueurs jouent à tour de rôle, chacun étant tenu de *capturer* des pions adverses lors de son mouvement. Si un joueur ne peut pas *capturer* de pions adverses, il est forcé de passer son tour. Si aucun des deux joueurs ne peut jouer, ou si l'othellier ne comporte plus de case vide, la partie est terminée. Le gagnant en fin de partie est celui qui possède le plus de pions sur l'othellier.
 
-La capture de pions survient lorsqu'un joueur place un de ses pions à l'extrémité d'un alignement de pions adverses contigus et dont l'autre extrémité est déjà occupée par un de ses propres pions. Les alignements considérés peuvent être une colonne, une ligne, ou une diagonale. Si le pion nouvellement placé vient fermer plusieurs alignements, il capture tous les pions adverses des lignes ainsi fermées. La capture se traduit par le retournement des pions capturés. Ces retournements n'entraînent pas d'effet de capture en cascade : seul le pion nouvellement posé est pris en compte.
+La capture de pions survient lorsqu'un joueur place un de ses pions à l'extrémité d'un alignement de pions adverses contigus et dont l'autre extrémité est déjà occupée par un de ses propres pions. Les alignements considérés peuvent être une colonne, une ligne ou une diagonale. Si le pion nouvellement placé vient fermer plusieurs alignements, il capture tous les pions adverses des lignes ainsi fermées. La capture se traduit par le retournement des pions capturés. Ces retournements n'entraînent pas d'effet de capture en cascade : seul le pion nouvellement posé est pris en compte.
 
 Par exemple, la figure ci-dessus montre la position de départ. La première figure ci-dessous, montre les 4 cases où Noir peut jouer, grâce à la capture d'un pion Blanc.
 
-|     | a    | b    | c    | d    | e    | f    | g    | h    |
-| --- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-|**1**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**2**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**3**|![][V]|![][V]|![][V]|![][G]|![][V]|![][V]|![][V]|![][V]|
-|**4**|![][V]|![][V]|![][G]|![][B]|![][N]|![][V]|![][V]|![][V]|
-|**5**|![][V]|![][V]|![][V]|![][N]|![][B]|![][G]|![][V]|![][V]|
-|**6**|![][V]|![][V]|![][V]|![][V]|![][G]|![][V]|![][V]|![][V]|
-|**7**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**8**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
+|       | a      | b      | c      | d      | e      | f      | g      | h      |
+|-------|--------|--------|--------|--------|--------|--------|--------|--------|
+| **1** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **2** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **3** | ![][V] | ![][V] | ![][V] | ![][G] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **4** | ![][V] | ![][V] | ![][G] | ![][B] | ![][N] | ![][V] | ![][V] | ![][V] |
+| **5** | ![][V] | ![][V] | ![][V] | ![][N] | ![][B] | ![][G] | ![][V] | ![][V] |
+| **6** | ![][V] | ![][V] | ![][V] | ![][V] | ![][G] | ![][V] | ![][V] | ![][V] |
+| **7** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **8** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
 
 Enfin, la figure suivante montre la position résultante si Noir joue en d3. Le pion Blanc d4 a été capturé (retourné), devenant ainsi un pion Noir.
 
-|     | a    | b    | c    | d    | e    | f    | g    | h    |
-| --- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-|**1**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**2**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**3**|![][V]|![][V]|![][V]|![][N]|![][V]|![][V]|![][V]|![][V]|
-|**4**|![][V]|![][V]|![][V]|![][N]|![][N]|![][V]|![][V]|![][V]|
-|**5**|![][V]|![][V]|![][V]|![][N]|![][B]|![][V]|![][V]|![][V]|
-|**6**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**7**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
-|**8**|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|![][V]|
+|       | a      | b      | c      | d      | e      | f      | g      | h      |
+|-------|--------|--------|--------|--------|--------|--------|--------|--------|
+| **1** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **2** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **3** | ![][V] | ![][V] | ![][V] | ![][N] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **4** | ![][V] | ![][V] | ![][V] | ![][N] | ![][N] | ![][V] | ![][V] | ![][V] |
+| **5** | ![][V] | ![][V] | ![][V] | ![][N] | ![][B] | ![][V] | ![][V] | ![][V] |
+| **6** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **7** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
+| **8** | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] | ![][V] |
 
 #### Travail à réaliser
 
@@ -276,7 +273,7 @@ Le résultat attendu devra ressembler à la fenêtre suivante :
 
 ![IHM](src/main/resources/assets/screenshoot.png)
 
-#### Etape 1 : Implémentation de la classe `Joueur`
+#### Étape 1 : Implémentation de la classe `Joueur`
 
 La classe `Joueur` permet de conserver les informations sur les deux joueurs d'une partie d'Othello. Cette classe a la responsabilité principale de gérer le score des joueurs.
 
@@ -288,13 +285,13 @@ La classe `Joueur` permet de conserver les informations sur les deux joueurs d'u
 
 4. Écrire les accesseurs `public void incrementerScore()`, `public void decrementerScore()` et `private void setScore(int score)` qui permettent de modifier le score d'un joueur.
 
-5. Les joueurs étant connus à l'avance (`BLANC` et `NOIR`), leur création peut être faite de manière statique. Pour éviter d'avoir à complexifier notre code avec des valeurs nulles, un joueur virtuel (`PERSONNE`) sera ajouté. Écrire la déclaration statiques des 3 Joueurs (`BLANC`, `NOIR`, `PERSONNE`) qui devront utiliser les images appelées "blanc.png", "noir.png" et "vide.png" situé dans les ressources.
+5. Les joueurs étant connus à l'avance (`BLANC` et `NOIR`), leur création peut être faite de manière statique. Pour éviter d'avoir à complexifier notre code avec des valeurs nulles, un joueur virtuel (`PERSONNE`) sera ajouté. Écrire la déclaration statique des 3 Joueurs (`BLANC`, `NOIR`, `PERSONNE`) qui devront utiliser les images appelées "blanc.png", "noir.png" et "vide.png" situé dans les ressources.
 
 6. Écrire la méthode `public Joueur suivant()` qui retourne le joueur `BLANC` si le joueur est `NOIR` et `NOIR` si le joueur est `BLANC`. L'appel de cette méthode sur tout autre joueur retourne `PERSONNE`.
 
 7. Écrire la méthode `public static void initialiserScores()` qui initialise à 0 les scores des joueurs `BLANC` et `NOIR`.
 
-#### Etape 2 : Implémentation de la classe `Case`
+#### Étape 2 : Implémentation de la classe `Case`
 
 Pour réaliser le plateau de jeu, il nous faut des boutons qui se souviennent de leur position dans l'othellier. Au moment de leur construction, de tels boutons reçoivent les valeurs des indices ligne et colonne qui définissent leur placement dans la matrice. Ils les mémoriseront dans des variables d’instance privées. En plus de ces coordonnées, il faut connaître le joueur qui possède la case pour y dessiner l'image de son jeton.
 
@@ -302,7 +299,7 @@ Pour réaliser le plateau de jeu, il nous faut des boutons qui se souviennent de
 
 - Elle étend la classe `Button`.
 
-- Elle contient deux données membres privée de type `int` nommées `ligne` et `colonne` pour mémoriser les coordonnées.
+- Elle contient deux données membres privées de type `int` nommées `ligne` et `colonne` pour mémoriser les coordonnées.
 
 - Elle contient aussi une donnée membre privée de type `Joueur` appelée `possesseur`.
 
@@ -312,7 +309,7 @@ Pour réaliser le plateau de jeu, il nous faut des boutons qui se souviennent de
 
 - Elle possède un setter `public void setPossesseur(Joueur possesseur)`, qui modifie la donnée membre correspondante et modifie l'image du bouton en utilisant la méthode `setImage(Image image)` sur la donnée membre `imageView`.
 
-#### Etape 3 : Implémentation de la classe `StatusBar`
+#### Étape 3 : Implémentation de la classe `StatusBar`
 
 La classe `StatusBar` est un composant graphique permettant d'afficher l'état de la partie en cours. L'affichage est constitué de trois zones. Celle de gauche, affiche le score du joueur noir, celle de droite celle du joueur blanc et la partie centrale un message qui indique le joueur courant.
 
@@ -328,11 +325,11 @@ Ouvrir maintenant la classe `StatusBar` qui représentera le composant de la bar
 
 - Elle possédera les accesseurs pour récupérer cette propriété.
 
-- La méthode `createBinding()` créera les bindings entre les labels droite et gauche et les scores des joueurs correspondants. Le label central se liera à la propriété `joueurCourant` pour construire son texte.
+- La méthode `createBinding()` créera les bindings entre le label droit et gauche et les scores des joueurs correspondants. Le label central se liera à la propriété `joueurCourant` pour construire son texte.
 
 - Le constructeur de la classe, devra charger comme il se doit le fichier FXML. Vous pouvez vous inspirer du code donné à l'exercice 2.
 
-#### Etape 4 : Implémentation de la classe `Othellier`
+#### Étape 4 : Implémentation de la classe `Othellier`
 
 Cette classe est celle qui permet d'implémenter toute la logique du jeu.
 
@@ -360,7 +357,7 @@ Cette classe est celle qui permet d'implémenter toute la logique du jeu.
 
     - positionner les pions dans leur configuration initiale.
 
-6. Supposons que l'on dispose d'une méthode `private List<Case> casesCapturables(Case caseSelectionnee)` qui permet de connaître la liste des cases capturables si le `joueurCourant` dépose un jeton sur la case `caseSelectionnee`. Écrire la méthode `boolean estPositionJouable(Case caseSelectionnee)` qui permet de savoir si le `joueurCourant` a le droit de déposer un jeton sur la case `caseSelectionnee`. Une position est jouable si la case est vide et si l'on capture au moins un pion adverse.
+6. Supposons que l'on dispose d'une méthode `private List<Case> casesCapturables(Case caseSelectionnee)` qui permet de connaître la liste des cases pouvant être capturées si le `joueurCourant` dépose un jeton sur la case `caseSelectionnee`. Écrire la méthode `boolean estPositionJouable(Case caseSelectionnee)` qui permet de savoir si le `joueurCourant` a le droit de déposer un jeton sur la case `caseSelectionnee`. Une position est jouable si la case est vide et si l'on capture au moins un pion adverse.
 
 7. Écrire la méthode `private List<Case> casesJouables()` qui retourne la liste de toutes les cases jouables par le `joueurCourant`. Pour ce faire, vous pouvez parcourir toutes les cases vides (celles qui n'appartiennent à `PERSONNE`) et les ajouter au résultat si elles sont jouables.
 
@@ -368,14 +365,14 @@ Cette classe est celle qui permet d'implémenter toute la logique du jeu.
 
 9. Écrire la méthode `private void tourSuivant()` qui affecte à `joueurCourant` le prochain joueur qui doit jouer. Si aucun des deux joueurs ne peut jouer, la partie est terminée et la donnée membre `joueurCourant` est positionnée à `PERSONNE`.
 
-10. Écrire la méthode `private void capturer(Case caseCapturee)` qui capture la case `caseCapturee` et retourne toute les cases capturables à partir de cette case. Cette méthode s'occupe aussi d'incrémenter et de décrémenter le score de chaque joueur pour maintenir le score à jour.
+10. Écrire la méthode `private void capturer(Case caseCapturee)` qui capture la case `caseCapturee` et retourne toutes les cases pouvant être capturées à partir de cette case. Cette méthode s'occupe aussi d'incrémenter et de décrémenter le score de chaque joueur pour maintenir le score à jour.
 
 11. On s’intéresse maintenant à ce qui doit se passer lorsqu’un joueur appuie sur un bouton. Pour cela, avec une expression lambda, vous allez écrire une classe implémentant l’interface `EventHandler<ActionEvent>`. On conservera une seule instance utilisée comme auditeur de tous les « événements action » produits par les boutons du jeu dans la donnée membre `caseListener`. Cette lambda implémente la méthode imposée `public void handle(ActionEvent evt)`, qui doit effectuer les tâches suivantes :
     - identifier le bouton ayant produit l’événement (pensez à la méthode `getSource()` du paramètre `evt`).
 
     - vérifier que la position choisie est jouable.
 
-    - capturer toutes les cases capturables.
+    - capturer toutes les cases pouvant être capturées.
 
     - choisir le prochain joueur qui doit jouer.
 
@@ -383,7 +380,7 @@ Cette classe est celle qui permet d'implémenter toute la logique du jeu.
 
 13. Écrire la méthode `private boolean estIndicesValides()` qui utilise `estIndiceValide()` et retourne vrai si la cellule correspondant à la ligne et colonne donnés en paramètre a un indice valide.
 
-14. La méthode `private List<Case> casesCapturables(Case caseSelectionnee)` qui retourne la liste des cases capturables si le `joueurCourant` dépose un jeton sur la case `caseSelectionnee` vous est donnée. Cette méthode vérifie dans toute les directions quel est l'ensemble des cases capturables. Elle utilise la méthode `estIndicesValides()` précédente.
+14. La méthode `private List<Case> casesCapturables(Case caseSelectionnee)` qui retourne la liste des cases pouvant être capturées si le `joueurCourant` dépose un jeton sur la case `caseSelectionnee` vous est donnée. Cette méthode vérifie dans toutes les directions quel est l'ensemble des cases pouvant être capturées. Elle utilise la méthode `estIndicesValides()` précédente.
 
 #### Étape 5 : Implémentation de la classe `OthelloController`
 
@@ -394,7 +391,7 @@ La classe `OthelloController` et le fichier FXML `OthelloView` représentent le 
 
     - `othellier` de type `Othellier` est l'objet plateau de jeu
 
-2. Écrire le ficher FXML décrivant la structure de l'IHM de notre jeu. La racine de la scène sera un objet du type `BorderPane` qui contiendra une `MenuBar`, un `Othelier` et une `StatusBar`. Rajouter les bonnes valeurs aux attributs `fx:id` pour que les données membres du contrôleur soient en correspondance avec les composants associés.
+2. Écrire le fichier FXML décrivant la structure de l'IHM de notre jeu. La racine de la scène sera un objet du type `BorderPane` qui contiendra une `MenuBar`, un `Othelier` et une `StatusBar`. Rajouter les bonnes valeurs aux attributs `fx:id` pour que les données membres du contrôleur soient en correspondance avec les composants associés.
 
 3. Écrire la méthode `public void initialize()` qui sera appelée par le `loader` lors du chargement du FXML. Cette méthode devra :
 
