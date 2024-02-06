@@ -1,32 +1,27 @@
-# <img src="https://raw.githubusercontent.com/IUTInfoAix-M2105/Syllabus/master/assets/logo.png" alt="class logo" class="logo"/> Développement d'application avec IHM
+# <img src="https://raw.githubusercontent.com/CraftLR/workshop-git/main/src/main/resources/assets/logo.png" alt="class logo" class="logo"/> 
 
-## IUT d’Aix-Marseille – Département Informatique Aix-en-Provence
+## La Rochelle Software Craftsmenship
+* **Auteurs:** 
+    * [Sébastien NEDJAR](mailto:sebastien.nedjar@univ-amu.fr)
+* **Besoin d'aide ?**
+    * Consulter et/ou créer des [issues](https://github.com/CraftLR/workshop-git/issues).
+    * [Email](mailto:sebastien.nedjar@univ-amu.fr) pour toutes questions autres.
 
-- **Ressource :** [R2.02](https://cache.media.enseignementsup-recherche.gouv.fr/file/SPE4-MESRI-17-6-2021/35/5/Annexe_17_INFO_BUT_annee_1_1411355.pdf)
-- **Responsables :**
-  - [Sébastien Nedjar](mailto:sebastien.nedjar@univ-amu.fr)
-- **Enseignants :**
-  - [Cyril Pain-Barre](mailto:cyril.pain-barre@univ-amu.fr)
-  - [Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr)
-- **Besoin d'aide ?**
-  - Consulter et/ou créer des [issues](https://github.com/IUTInfoAix-R203/tp1-git/issues).
-  - [Email](mailto:sebastien.nedjar@univ-amu.fr) pour une question d'ordre privée, ou pour convenir d'un rendez-vous physique.
+## Aperçu du workshop et objectifs d'apprentissage
 
-## Aperçu du TP et objectifs d'apprentissage
+Ce workshop continue l'exploration des mécanismes clefs de JavaFX comme le FXML.
 
-Ce TP continue l'exploration des mécanismes clefs de JavaFX comme le FXML.
+## workshop : FXML
 
-## TP : FXML
-
-### Création de votre fork du TP
+### Création de votre fork du workshop
 
 La première chose que vous allez faire est de créer un fork d'un dépôt. Pour ce faire, rendez-vous sur le lien suivant :
 
-<https://classroom.github.com/a/r2VgR3ds>
+<https://classroom.github.com/a/h_4Fza9V>
 
-Comme pour les autres TP, GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-R202/tp3' et s'appelant 'IUTInfoAix-R202-2022/tp3-votreUsername'.Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser votre travail.
+Comme pour les autres workshops, GitHub va vous créer un dépôt contenant un fork du dépôt 'CraftLR/workshop-JavaFX-FXML' et s'appelant 'CraftLR/workshop-JavaFX-FXML-votreUsername'.Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser votre travail.
 
-Une fois votre fork créé, il vous suffit de l'importer dans IntelliJ.
+Une fois votre fork créé, il vous suffit de l'importer dans votre IDE.
 
 ### Exercice 1 : Création de l'IHM d'une application en FXML
 
