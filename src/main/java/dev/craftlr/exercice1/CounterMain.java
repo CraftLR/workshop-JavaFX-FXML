@@ -14,7 +14,7 @@ public class CounterMain extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         try {
-            BorderPane root = FXMLLoader.load(getClass().getResource("/fr/univ_amu/iut/exercice1/CounterView.fxml"));
+            BorderPane root = FXMLLoader.load(getClass().getResource("/dev/craftlr/exercice1/CounterView.fxml"));
             stage.setScene(new Scene(root));
             stage.show();
         } catch (Exception e) {

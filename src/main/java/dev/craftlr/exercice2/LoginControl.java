@@ -18,7 +18,7 @@ public class LoginControl extends GridPane {
 
     public LoginControl() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
-                "/fr/univ_amu/iut/exercice2/LoginView.fxml"));
+                "/dev/craftlr/exercice2/LoginView.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
